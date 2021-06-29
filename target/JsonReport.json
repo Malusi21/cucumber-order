@@ -1,0 +1,94 @@
+[
+  {
+    "line": 5,
+    "elements": [
+      {
+        "start_timestamp": "2021-06-29T21:50:51.386Z",
+        "line": 7,
+        "name": "Check that user is taken to the correct page to purchase",
+        "description": "",
+        "id": "feature-to-test-the-ordering-of-a-t-shirt;check-that-user-is-taken-to-the-correct-page-to-purchase",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the user opens the browser to the ordering site",
+            "match": {
+              "location": "StepDefinitions.OrderTshirtSteps.the_user_opens_the_browser_to_the_ordering_site()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "is redirected to the home page",
+            "match": {
+              "location": "StepDefinitions.OrderTshirtSteps.is_redirected_to_the_home_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "The user is Displayed the \"T-Shirt\" category Tab",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"T-Shirt\"",
+                  "offset": 26
+                }
+              ],
+              "location": "StepDefinitions.OrderTshirtSteps.the_user_is_displayed_the_category_tab(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Click on the T-Shirt Category button",
+            "match": {
+              "location": "StepDefinitions.OrderTshirtSteps.click_on_the_t_shirt_category_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "the user is redirected to the \"T-Shirt\" category page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"T-Shirt\"",
+                  "offset": 30
+                }
+              ],
+              "location": "StepDefinitions.OrderTshirtSteps.the_user_is_redirected_to_the_category_page(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "feature to test the Ordering of a t-shirt",
+    "description": "",
+    "id": "feature-to-test-the-ordering-of-a-t-shirt",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/OrderTshirt.feature",
+    "tags": []
+  }
+]
