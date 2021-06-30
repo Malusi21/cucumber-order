@@ -24,9 +24,11 @@ public class OrderTshirtSteps {
     String OrderItemCountString = "There is 1 item in your cart.";
     WebDriver driver = null;
     String Firstname = "Legend1sdfdsfTestShop";
-    String Lastname = "Lesdfsdfgacy1";
+    String UpdatedName = "SpanishLaLiga";
+    String Lastname = "TetSur";
     String email = "Test@1222email.com";
-    String Password = "12345";
+    String Password = "54321";
+    String newPassword = "12345";
     String Company = "Test225433";
     String Address = "23 Test road, Automation";
     String City = "Automation";
@@ -112,6 +114,7 @@ public class OrderTshirtSteps {
     @Then("Click on the Proceed to Checkout button")
     public void click_on_the_proceed_to_checkout_button() {
         // Write code here that turns the phrase above into concrete actions
+        js.executeScript("window.scrollBy(0,100)");
         clickCheckout();
     }
     private void clickCheckout(){
@@ -123,6 +126,12 @@ public class OrderTshirtSteps {
         driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
         driver.findElement(By.xpath("//*//p[2]/a[contains(.,\"Proceed to checkout\")]")).isDisplayed();
         driver.findElement(By.xpath("//*//p[2]/a[contains(.,\"Proceed to checkout\")]")).click();
+    }
+    private void clickAddressCheckout(){
+
+        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+        driver.findElement(By.xpath("//*//p/button[contains(.,\"Proceed to checkout\")]")).isDisplayed();
+        driver.findElement(By.xpath("//*//p/button[contains(.,\"Proceed to checkout\")]")).click();
     }
 
     @Then("Verify the user is redirected to the Shopping-Cart Summary page")
@@ -153,7 +162,9 @@ public class OrderTshirtSteps {
     @And("Login with existing account")
     public void login_with_existing_account(){
 
-        driver.findElement(By.xpath("//*[@id=\"center_column\"]/h1[contains(.,\"Authentication\")]")).isDisplayed();
+        driver.findElement(By.xpath("//*//a[contains(.,\"Sign in\")]")).isDisplayed();
+        driver.findElement(By.xpath("//*//a[contains(.,\"Sign in\")]")).click();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.xpath("//*[@id=\"create-account_form\"]/h3[contains(.,\"Create an account\")]")).isDisplayed();
         driver.findElement(By.id("email")).isDisplayed();
         driver.findElement(By.id("email")).isEnabled();
@@ -216,8 +227,7 @@ public class OrderTshirtSteps {
 
         driver.findElement(By.xpath("")).isDisplayed();
         driver.findElement(By.xpath("")).click();
-        driver.close();
-        driver.quit();
+
 
 
     }
@@ -257,7 +267,8 @@ public class OrderTshirtSteps {
     }
     @And("Preview Entered user address")
     public void enter_user_address(){
-        clickCheckout();
+        js.executeScript("window.scrollBy(0,700)");
+        clickAddressCheckout();
     }
     @Then("Confirm Shipping")
     public void confirm_shipping_address(){
@@ -266,7 +277,7 @@ public class OrderTshirtSteps {
         driver.findElement(By.id("cgv")).click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(By.id("cgv")).isSelected();
-        clickCheckout();
+        clickAddressCheckout();
     }
     @And("Complete Payment via bank")
     public void complete_payment_via_bank(){
@@ -276,11 +287,86 @@ public class OrderTshirtSteps {
         driver.findElement(By.className("bankwire")).click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-
     }
 
     @Then("Confirm Order")
     public void confirm_order(){
-        
+        driver.findElement(By.className("module-bankwire-payment")).isDisplayed();
+        driver.findElement(By.xpath("//*//button[contains(.,\"I confirm my order\")]")).isDisplayed();
+        driver.findElement(By.xpath("//*//button[contains(.,\"I confirm my order\")]")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.findElement(By.xpath("//*//h1[contains(.,\"Order confirmation\")]")).isDisplayed();
+        driver.findElement(By.xpath("//*//h1[contains(.,\"Order confirmation\")]")).click();
+
+    }
+
+    @Then("Return User to Home Page")
+    public void return_user_to_home_page(){
+        driver.findElement(By.xpath("//*//a[contains(@title,\"My Store\")]")).isDisplayed();
+        driver.findElement(By.xpath("//*//a[contains(@title,\"My Store\")]")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.getCurrentUrl().contains("http://automationpractice.com/index.php");
+        driver.close();
+        driver.quit();
+    }
+
+    @Then("Go to User Personal information page")
+    public void go_to_personal_information_page(){
+        driver.findElement(By.xpath("//*//a[contains(.,\"My personal information\")]")).isDisplayed();
+        driver.findElement(By.xpath("//*//a[contains(.,\"My personal information\")]")).click();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+    }
+
+    @And("Update Users Firstname")
+    public void update_firstname(){
+        driver.findElement(By.xpath("//*//h1[contains(.,\"Your personal information\")]")).isDisplayed();
+        driver.findElement(By.id("firstname")).isDisplayed();
+        driver.findElement(By.id("firstname")).clear();
+        driver.findElement(By.id("firstname")).click();
+        driver.findElement(By.id("firstname")).sendKeys(UpdatedName);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+    }
+    @And("Update User password")
+    public void update_password(){
+        driver.findElement(By.id("old_passwd")).isDisplayed();
+        driver.findElement(By.id("old_passwd")).click();
+        driver.findElement(By.id("old_passwd")).isDisplayed();
+        driver.findElement(By.id("old_passwd")).sendKeys(Password);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+        driver.findElement(By.id("passwd")).isDisplayed();
+        driver.findElement(By.id("passwd")).click();
+        driver.findElement(By.id("passwd")).isDisplayed();
+        driver.findElement(By.id("passwd")).sendKeys(newPassword);
+
+        driver.findElement(By.id("confirmation")).isDisplayed();
+        driver.findElement(By.id("confirmation")).click();
+        driver.findElement(By.id("confirmation")).isDisplayed();
+        driver.findElement(By.id("confirmation")).sendKeys(newPassword);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.findElement(By.xpath("//*//button[contains(.,\"Save\")]")).click();
+
+
+    }
+    @Then("Validate user details have been updated")
+    public void confirm_details_updated(){
+
+        driver.findElement(By.xpath("//*//p[contains(.,\"Your personal information has been successfully updated.\")]")).isDisplayed();
+        driver.findElement(By.xpath("//*//a/span[contains(.,\"Home\")]")).isDisplayed();
+        driver.findElement(By.xpath("//*//a/span[contains(.,\"Home\")]")).isEnabled();
+        driver.findElement(By.xpath("//*//a/span[contains(.,\"Home\")]")).click();
+
+    }
+    @And("New name is displayed to the user on the home page")
+    public void new_name_displayed_to_user(){
+
+        driver.getCurrentUrl().contains("http://automationpractice.com/index.php");
+        String namePath = "//*//a/span[contains(.,\""+UpdatedName+" "+ Lastname +"\")]";
+        System.out.println(namePath);
+        driver.findElement(By.xpath(namePath)).isDisplayed();
+        driver.close();
+        driver.quit();
     }
 }
