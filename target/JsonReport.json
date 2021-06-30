@@ -1,9 +1,9 @@
 [
   {
-    "line": 5,
+    "line": 6,
     "elements": [
       {
-        "start_timestamp": "2021-06-29T21:50:51.386Z",
+        "start_timestamp": "2021-06-30T07:22:24.658Z",
         "line": 7,
         "name": "Check that user is taken to the correct page to purchase",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2000000,
+              "duration": 130204000000,
               "status": "passed"
             },
             "line": 8,
@@ -25,6 +25,7 @@
           },
           {
             "result": {
+              "duration": 107000000,
               "status": "passed"
             },
             "line": 9,
@@ -36,59 +37,294 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 2798000000,
               "status": "passed"
             },
             "line": 10,
-            "name": "The user is Displayed the \"T-Shirt\" category Tab",
+            "name": "The T-Shirt category Tab is Displayed and can be clicked",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"T-Shirt\"",
-                  "offset": 26
-                }
-              ],
-              "location": "StepDefinitions.OrderTshirtSteps.the_user_is_displayed_the_category_tab(java.lang.String)"
+              "location": "StepDefinitions.OrderTshirtSteps.the_t_shirt_category_tab_is_displayed_and_can_be_clicked()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 48000000,
               "status": "passed"
             },
             "line": 11,
-            "name": "Click on the T-Shirt Category button",
+            "name": "the user is redirected to the T-Shirt category page",
             "match": {
-              "location": "StepDefinitions.OrderTshirtSteps.click_on_the_t_shirt_category_button()"
+              "location": "StepDefinitions.OrderTshirtSteps.the_user_is_redirected_to_the_t_shirt_category_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 39000000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Products are displayed to the user",
+            "match": {
+              "location": "StepDefinitions.OrderTshirtSteps.products_are_displayed_to_the_user()"
             },
             "keyword": "And "
           },
           {
             "result": {
+              "duration": 314000000,
               "status": "passed"
             },
-            "line": 12,
-            "name": "the user is redirected to the \"T-Shirt\" category page",
+            "line": 13,
+            "name": "Hovering over a Product Reveals the item add to cart button",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"T-Shirt\"",
-                  "offset": 30
-                }
-              ],
-              "location": "StepDefinitions.OrderTshirtSteps.the_user_is_redirected_to_the_category_page(java.lang.String)"
+              "location": "StepDefinitions.OrderTshirtSteps.hovering_over_a_product_reveals_the_item_add_to_cart_button()"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 128000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "User is able to click on the Add to Cart button",
+            "match": {
+              "location": "StepDefinitions.OrderTshirtSteps.user_is_able_to_click_on_the_add_to_cart_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2618000000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "Click on the Proceed to Checkout button",
+            "match": {
+              "location": "StepDefinitions.OrderTshirtSteps.click_on_the_proceed_to_checkout_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2955000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Verify the user is redirected to the Shopping-Cart Summary page",
+            "match": {
+              "location": "StepDefinitions.OrderTshirtSteps.verify_the_user_is_redirected_to_the_Shopping_Cart_Summary_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 295000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Signin With a default user account on Authentication page",
+            "match": {
+              "location": "StepDefinitions.OrderTshirtSteps.signin_With_a_default_user_account_on_authentication_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 50000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "Click on the Create an account button",
+            "match": {
+              "location": "StepDefinitions.OrderTshirtSteps.click_on_the_create_an_account_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4460000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Create a new user account by adding in Personal details",
+            "match": {
+              "location": "StepDefinitions.OrderTshirtSteps.create_a_new_user_account_by_adding_in_personal_details()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#Company\"}\n  (Session info: chrome\u003d91.0.4472.114)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Malusis-MacBook-Pro-2.local\u0027, ip: \u0027fe80:0:0:0:18d3:8470:53f8:ad2b%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.16\u0027, java.version: \u00271.8.0_191\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: /var/folders/7l/yjl07qmd3x3...}, goog:chromeOptions: {debuggerAddress: localhost:56089}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 373d96aaaeea47ef0914a41a2b35e03b\n*** Element info: {Using\u003did, value\u003dCompany}\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)\n\tat org.openqa.selenium.By$ById.findElement(By.java:188)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat StepDefinitions.OrderTshirtSteps.enter_user_address(OrderTshirtSteps.java:214)\n\tat ✽.Enter user address(file:///Users/malusimsomi/Documents/GitHub/cucumber-order/src/test/resources/Features/OrderTshirt.feature:20)\n",
+              "duration": 5473000000,
+              "status": "failed"
+            },
+            "line": 20,
+            "name": "Enter user address",
+            "match": {
+              "location": "StepDefinitions.OrderTshirtSteps.enter_user_address()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 21,
+            "name": "Click on the Register button",
+            "match": {
+              "location": "StepDefinitions.OrderTshirtSteps.click_on_the_register_button()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@OrderTshirt"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-06-30T07:24:54.284Z",
+        "line": 25,
+        "name": "",
+        "description": "",
+        "id": "feature-to-test-the-ordering-of-a-t-shirt;",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 26,
+            "name": "Click on the \"Proceed to Checkout\" button",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 27,
+            "name": "Verify that the correct email address and agree to terms on shipping page",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 28,
+            "name": "Click on the \"Proceed to Checkout\" button",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 29,
+            "name": "Verify the correct amount is displayed in the payment screen",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 30,
+            "name": "Select Bank payment option",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 31,
+            "name": "Verify user is redirected to the Bank-Wire payment page",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 32,
+            "name": "Click on the \"I confirm my order\" button",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 33,
+            "name": "Verify that the user is presented with their order details",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 34,
+            "name": "Click \"Back to Orders button\"",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 35,
+            "name": "Validate the correct Order details are displayed in the Order history",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 36,
+            "name": "Click on the \"Home\" button",
+            "match": {},
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 37,
+            "name": "Validate that the user is redirected to the home page",
+            "match": {},
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@OrderTshirt"
           }
         ]
       }
     ],
-    "name": "feature to test the Ordering of a t-shirt",
+    "name": "Feature to test the Ordering of a t-shirt",
     "description": "",
     "id": "feature-to-test-the-ordering-of-a-t-shirt",
     "keyword": "Feature",
     "uri": "file:src/test/resources/Features/OrderTshirt.feature",
-    "tags": []
+    "tags": [
+      {
+        "name": "@OrderTshirt",
+        "type": "Tag",
+        "location": {
+          "line": 5,
+          "column": 1
+        }
+      }
+    ]
   }
 ]
