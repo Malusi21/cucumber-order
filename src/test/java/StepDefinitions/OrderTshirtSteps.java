@@ -24,7 +24,7 @@ public class OrderTshirtSteps {
     String OrderItemCountString = "There is 1 item in your cart.";
     WebDriver driver = null;
     String Firstname = "Legend1sdfdsfTestShop";
-    String UpdatedName = "SpanishLaLiga";
+    String UpdatedName = "Spanishlaliga";
     String Lastname = "TetSur";
     String email = "Test@1222email.com";
     String Password = "54321";
