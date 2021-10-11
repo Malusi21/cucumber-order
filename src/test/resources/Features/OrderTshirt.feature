@@ -8,11 +8,44 @@
 
 @OrderTshirt
 Feature: Feature to test the Ordering of a t-shirt
+  Background: New browser session for ordering T-shirts
+    # set of steps that will run prior to any scenarios running
+    Given a user opens the browser to access the Ordering Site
+    When The Browser has loaded
+    Then the user should be on the correct Ordering site page
+    And The user is not logged in
+
+  Scenario Outline: Login with user details
+    # Set of steps that will run and take in the values that are displayed in the
+    Given user is redirected to the home page
+    And the user clicks on the Login button
+    When the user is redirected to the login page and logins with a <username> and <password> of an existing account
+    And the user
+    Then the user should be successfully logged in
+    And Correct <username> is displayed
+
+  Scenario: Complete a Purchase
+    Given the user is logged in
+
+
+  Scenario: Update user details
+
+  Examples:
+    | username | password |
+    | "MmsomiUser" | "Test!@12"   |
+    | "Legendtest" | "Legend@@12" |
+    | "Mmsomi1"    | "Test!@12"   |
+    | "Legend30"   | "Legend@@12" |
+
+
   Scenario: Login and complete a purchase with an existing user
     Given the user opens the browser to the ordering site
     And is redirected to the home page
     And Login with existing account
-    When The T-Shirt category Tab is Displayed and can be clicked
+    When The T-Shirt category Tab is Displayed and can be clicked -
+
+  (Contextual Info - this can be added to the Context
+
     Then the user is redirected to the T-Shirt category page
     And Products are displayed to the user
     Then Hovering over a Product Reveals the item add to cart button
