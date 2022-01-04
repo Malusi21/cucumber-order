@@ -10,8 +10,9 @@
 Feature: Feature to test the Ordering of a t-shirt
   Background: New browser session for ordering T-shirts
     # set of steps that will run prior to any scenarios running
-    Given a user opens the browser to access the Ordering Site
-    When The Browser has loaded
+    # given a user is on the ordering site and the user is not logged in
+    Given the user opens the browser to the ordering site
+    When The Br+-owser has loaded
     Then the user should be on the correct Ordering site page
     And The user is not logged in
 
@@ -24,11 +25,20 @@ Feature: Feature to test the Ordering of a t-shirt
     Then the user should be successfully logged in
     And Correct <username> is displayed
 
-  Scenario: Complete a Purchase
-    Given the user is logged in
+  Scenario: Select a item to purchase from the T-shirt Category
+    Given the user should be successfully logged in
+    And user clicks on the T-shirt category button
+    When the user is redirected to the category page
+    And  the user is shown the list of category items to chose from
+    Then user Hovers over a Product Reveals the item add to cart button
+    And user clicks on the
+
+  #Scenario:
 
 
-  Scenario: Update user details
+
+
+  #Scenario: Update user details
 
   Examples:
     | username | password |
@@ -44,8 +54,7 @@ Feature: Feature to test the Ordering of a t-shirt
     And Login with existing account
     When The T-Shirt category Tab is Displayed and can be clicked -
 
-  (Contextual Info - this can be added to the Context
-
+ # (Contextual Info - this can be added to the Context
     Then the user is redirected to the T-Shirt category page
     And Products are displayed to the user
     Then Hovering over a Product Reveals the item add to cart button

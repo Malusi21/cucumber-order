@@ -9,8 +9,15 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class OrderTshirtSteps {
@@ -38,14 +45,57 @@ public class OrderTshirtSteps {
     public void the_user_opens_the_browser_to_the_ordering_site() {
         // This function to starts up a new chrome web driver browser session
         // driver location also contains firefox geco driver which tests can also run against
-        System.setProperty("webdriver.chrome.driver", projectPath +"/src/test/resources/drivers/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/src/test/resources/drivers/chromedriver");
 
-        driver = new ChromeDriver();
-        js = (JavascriptExecutor) driver;
-        driver.navigate().to("http://automationpractice.com");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+        //driver = new ChromeDriver();
+        //js = (JavascriptExecutor) driver;
+        //driver.navigate().to("http://automationpractice.com/index.php");
+        //driver.manage().window().maximize();
+       // driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+        ThreadLocal <RemoteWebDriver> driver = new ThreadLocal<>();
+        String endpoint = "http://172.17.0.2:4444/wd/hub";
+        ChromeOptions options = new ChromeOptions();
+//DesiredCapabilities cap = DesiredCapabilities.chrome();
+        //cap.setCapability();
+        //URL u = new URL("http://localhost:4444/wd/hub");
+        //RemoteWebDriver driver= new RemoteWebDriver(u,cap);
+        try {
+            driver.set(new RemoteWebDriver(new URL(endpoint), options));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        //driver.get("http://www.gumtree.co.za");
+
+        System.out.println("Done");
+        driver.get().quit();
     }
+    //@Given("the user opens the browser to the ordering site")
+    public void UsingRemoteBrowser_the_user_opens_the_browser_to_the_ordering_site() {
+        // This function to starts up a new chrome web driver browser session
+        // driver location also contains firefox geco driver which tests can also run against
+        //System.setProperty("webdriver.chrome.driver", "/src/test/resources/drivers/chromedriver");
+        //
+        ThreadLocal <RemoteWebDriver> driver = new ThreadLocal<>();
+        String endpoint = "http://172.17.0.2:4444/wd/hub";
+        ChromeOptions options = new ChromeOptions();
+//DesiredCapabilities cap = DesiredCapabilities.chrome();
+        //cap.setCapability();
+        //URL u = new URL("http://localhost:4444/wd/hub");
+        //RemoteWebDriver driver= new RemoteWebDriver(u,cap);
+        try {
+            driver.set(new RemoteWebDriver(new URL(endpoint), options));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        //driver.get("http://www.gumtree.co.za");
+
+        System.out.println("Done");
+        driver.get().quit();
+        //public static String remote_url = "http://localhost:4444/wd/hub":
+        //FirefoxOptions options = new FirefoxOptions();
+        //driver.set(new RemoteWebDriver(new URL(remote_url),options));
+    }
+
     @And("is redirected to the home page")
     public void is_redirected_to_the_home_page() {
         // This function validates that the user is redirected to the correct page
